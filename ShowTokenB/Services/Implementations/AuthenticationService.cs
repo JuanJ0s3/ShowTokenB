@@ -29,15 +29,6 @@ namespace ShowTokenB.Services.Implementations
             return GenerateJwtToken(user.Username);
         }
 
-        public async Task<bool> RegisterUser(string username, string password)
-        {
-            var existingUser = await _userRepository.GetUserByUsername(username);
-            if (existingUser != null) return false;
-
-            var newUser = new User { Username = username, Password = password };
-            await _userRepository.AddUser(newUser);
-            return true;
-        }
 
         public string GenerateJwtToken(string username)
         {

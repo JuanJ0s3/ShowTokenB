@@ -81,6 +81,7 @@ builder.Services.AddSingleton<IFoodService, FoodService>();
 
 builder.Services.AddSingleton<IUserRepository, UserRepository>();
 builder.Services.AddSingleton<IAuthenticationService, AuthenticationService>();
+builder.Services.AddSingleton<IRegisterUserService, RegisterUserService>();
 
 builder.Services.AddSingleton(typeof(IMongoCollectionFactory<>), typeof(MongoCollectionFactory<>));
 

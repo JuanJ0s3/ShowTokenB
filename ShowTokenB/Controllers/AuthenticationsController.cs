@@ -26,13 +26,6 @@ namespace ShowTokenB.Controllers
             return Ok(new { token });
         }
 
-        [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] User registration)
-        {
-            var success = await _authenticationService.RegisterUser(registration.Username, registration.Password);
-            if (!success) return BadRequest(new { message = "Username already exists." });
-
-            return Ok(new { message = "User registered successfully." });
-        }
+ 
     }
 }
